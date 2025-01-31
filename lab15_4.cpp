@@ -19,3 +19,25 @@ int main(){
 }
 
 //Do not modify source code above this line
+
+void swap(int &x, int &y) {
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
+void shuffle(int &a, int &b, int &c, int &d) {
+    int arr[] = {a, b, c, d}; // Store values in an array
+
+    // Shuffle using Fisher-Yates algorithm
+    for (int i = 3; i > 0; i--) {
+        int j = rand() % (i + 1); // Pick a random index from 0 to i
+        swap(arr[i], arr[j]); // Swap elements
+    }
+
+    // Assign shuffled values back to the variables
+    a = arr[0];
+    b = arr[1];
+    c = arr[2];
+    d = arr[3];
+}
